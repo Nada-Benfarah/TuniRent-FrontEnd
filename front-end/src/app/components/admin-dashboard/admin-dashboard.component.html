@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+
+
+    <ul class="list-unstyled components">
+      <p>Dummy Heading</p>
+
+      <li>
+        <a [routerLink]="['/admin']">Dashboard</a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/manage-users']">Manage Users</a>
+      </li>
+      <li>
+        <a [routerLink]="['/manage-advertisment']">Manage advertisement</a>
+      </li>
+      <li>
+        <a >Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
