@@ -14,7 +14,7 @@
                 <input type="text"  class="form-control form-control-lg" placeholder="chercher votre studio">
               </div>
               <div class="col-lg-4">
-                <button  [routerLink]="['/create-advert']" class="btn btn-primary btn-lg" >Proposer votre propre annonce</button>
+                <button    class="btn btn-primary btn-lg" >Proposer votre propre annonce</button>
               </div>
             </div>
 
@@ -31,5 +31,24 @@
 
   </div>
 </section>
+<div class="container text-center  my-4  shadow-lg p-3 mb-5 bg-body-tertiary rounded-1">
+  <h4 class="my-4 mx-2 shadow p-3 mb-5 bg-body-tertiary rounded  w-60 text-success text-start "><u> Quelques annonces que vous pouvez intreresser</u></h4>
 
-<button [routerLink]="['/adverts']" type="button" class="button btn btn-dark">Voir tout </button>
+  <div class="row  my-4">
+    <div class="col-md-4 mb-4" *ngFor="let annonce of response ">
+      <img [src]="annonce.images[0]" height="250" width="250" class="my-2" >
+      <div>Adresse : </div>
+      <div>Nombre des places disponibles: {{ annonce.numberOfPlaces }} </div>
+      <div>Prix : {{ annonce.price }} TND</div>
+
+
+
+      <button [routerLink]="['/advert', annonce.idAnnonce]" type="button" class="button btn btn-success my-2">Voir</button>
+    </div>
+
+
+  </div>
+  <button [routerLink]="['/adverts']" type="button" class="button btn btn-dark">Voir tout </button>
+
+</div>
+

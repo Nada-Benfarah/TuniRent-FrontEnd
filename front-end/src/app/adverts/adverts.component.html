@@ -1,21 +1,36 @@
 <div class="w-75 mx-4 my-4 d-flex text-center p-5 ">
-  <select  class="form-select mx-2">
-    <option value="">--Veuillez selectez l'option de triage--</option>
-    <option value="date">Date</option>
-    <option value="loyer">Loyer</option>
-    <option value="superficie">Superficie</option>
-    <option value="nbChambre">Nombre de chambres</option>
-  </select>
-  <select  class="form-select mx-2">
-    <option value="">--Veuillez selectez l'option de l'ordre--</option>
-    <option value="asc">Ascendant</option>
-    <option value="desc">Descendant</option>
-  </select>
-  <input
-    type="text"
-    class="form-control mx-4"
-    placeholder="search"
-    aria-label="Username"
-    aria-describedby="basic-addon1"
+  <div>
+    <label for="locationFilter">Location:</label>
+    <input type="text" id="locationFilter" [(ngModel)]="locationFilter" />
+  </div>
 
-  /></div>
+  <div>
+    <label for="priceFilter">Price:</label>
+    <input type="number" id="priceFilter" [(ngModel)]="priceFilter" />
+  </div>
+
+  <div>
+    <label for="typeFilter">Type:</label>
+    <input type="text" id="typeFilter" [(ngModel)]="typeFilter" />
+  </div>
+
+  <button (click)="applyFilters()">Apply Filters</button></div>
+<div class="container text-center  my-4  shadow-lg p-3 mb-5 bg-body-tertiary rounded-1">
+
+  <div class="row  my-4">
+    <div class="col-md-4 mb-4" *ngFor="let annonce of response ">
+      <img [src]="annonce.images[0]" height="250" width="250" class="my-2" >
+      <div>Adresse : </div>
+      <div>Nombre des places disponibles: {{ annonce.numberOfPlaces }} </div>
+      <div>Prix : {{ annonce.price }} TND</div>
+
+
+
+      <button   [routerLink]="['/advert', annonce.idAnnonce]"
+                type="button"
+                class="button btn btn-success my-2">Voir</button>
+    </div>
+
+
+  </div>
+
