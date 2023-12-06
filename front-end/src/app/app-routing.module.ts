@@ -11,6 +11,7 @@ import {AdvertComponent} from "./advert/advert.component";
 import {CarteComponent} from "./carte/carte.component";
 import {AdvertsComponent} from "./adverts/adverts.component";
 import {ResetComponent} from "./reset/reset.component";
+import {AuthGuardService} from "./services/auth.guard.service";
 
 const routes: Routes = [
   {    path:'auth',
@@ -39,12 +40,11 @@ const routes: Routes = [
   {    path:'carte',
     component:CarteComponent
   },
-  {    path:'advert',
+  {    path:'advert/:id',
     component:AdvertComponent
   },
-  {    path:'create-advert',
-    component:CreateAdvertComponent
-  },
+  { path: 'create-advert', component: CreateAdvertComponent, canActivate: [AuthGuardService] },
+
   {    path:'reset',
     component:ResetComponent
   }

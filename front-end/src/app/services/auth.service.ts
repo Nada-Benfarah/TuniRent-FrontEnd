@@ -3,6 +3,7 @@ import {LoginRequest} from "../model/LoginRequest";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {RegisterRequest} from "../model/RegisterRequest";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +80,10 @@ export class authService {
           console.log(err);
         }
       });
+  }
+  logout(): Observable<string> {
+    const url = `${this.endpoint}/logout`;
+    return this.http.get<string>(url);
   }
 
 }

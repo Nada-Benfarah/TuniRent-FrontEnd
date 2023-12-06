@@ -12,7 +12,6 @@ import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashbo
 import {UserDashboardComponent} from "./components/user-dashboard/user-dashboard.component";
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
 import { ManageAdvertisementComponent } from './components/manage-advertisement/manage-advertisement.component';
-import { AdvertComponent } from './auth/advert/advert.component';
 import { AdvertsComponent } from './adverts/adverts.component';
 import { CarteComponent } from './carte/carte.component';
 import { CreateAdvertComponent } from './components/create-advert/create-advert.component';
@@ -28,7 +27,6 @@ import { ResetComponent } from './reset/reset.component';
     UserDashboardComponent,
     ManageUsersComponent,
     ManageAdvertisementComponent,
-    AdvertComponent,
     AdvertsComponent,
     CarteComponent,
     CreateAdvertComponent,

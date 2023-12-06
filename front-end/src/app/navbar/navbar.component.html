@@ -14,7 +14,15 @@
         </li>
 
 
-        <li><a [routerLink]="['/auth']">Se connecter</a></li>
+        <ng-container *ngIf="isLoggedIn(); else notLoggedIn">
+          <!-- If logged in, show Logout -->
+          <li><a (click)="onLogoutClick()">Logout</a></li>
+        </ng-container>
+
+        <ng-template #notLoggedIn>
+          <!-- If not logged in, show Se connecter -->
+          <li><a [routerLink]="['/auth']">Se connecter</a></li>
+        </ng-template>
 
         <li>
           <a >Profile</a>
