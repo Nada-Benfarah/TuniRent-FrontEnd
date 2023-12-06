@@ -68,6 +68,10 @@ export class authService {
           if(res.token) {
             localStorage.setItem('access_token', res.token);
             localStorage.setItem('email', res.email);
+            if(this.getRoles()=="ROLE_ADMIN") {
+              this.router.navigateByUrl('/admin')
+              return;
+            }
             this.router.navigateByUrl('/home')
           }
         },

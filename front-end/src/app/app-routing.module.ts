@@ -30,6 +30,9 @@ const routes: Routes = [
   {    path:'home',
     component:HomeComponent
   },
+  {    path:'',
+    component:HomeComponent
+  },
   {    path:'adverts',
     component:AdvertsComponent
   },
