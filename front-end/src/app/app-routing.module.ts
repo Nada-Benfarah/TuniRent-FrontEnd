@@ -10,6 +10,7 @@ import {CreateAdvertComponent} from "./components/create-advert/create-advert.co
 import {AdvertComponent} from "./advert/advert.component";
 import {CarteComponent} from "./carte/carte.component";
 import {AdvertsComponent} from "./adverts/adverts.component";
+import {ResetComponent} from "./reset/reset.component";
 
 const routes: Routes = [
   {    path:'auth',
@@ -26,6 +27,9 @@ const routes: Routes = [
   {    path:'manage-users',
     component:ManageUsersComponent
   },
+  {    path:'home',
+    component:HomeComponent
+  },
   {    path:'',
     component:HomeComponent
   },
@@ -40,6 +44,9 @@ const routes: Routes = [
   },
   {    path:'create-advert',
     component:CreateAdvertComponent
+  },
+  {    path:'reset',
+    component:ResetComponent
   }
 ];
 

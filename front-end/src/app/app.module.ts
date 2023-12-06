@@ -17,6 +17,7 @@ import { AdvertsComponent } from './adverts/adverts.component';
 import { CarteComponent } from './carte/carte.component';
 import { CreateAdvertComponent } from './components/create-advert/create-advert.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AdvertsComponent,
     CarteComponent,
     CreateAdvertComponent,
-    NavbarComponent
+    NavbarComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

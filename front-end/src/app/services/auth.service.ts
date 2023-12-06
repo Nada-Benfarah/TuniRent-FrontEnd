@@ -66,11 +66,13 @@ export class authService {
       .subscribe({
         next: (res) => {
           if(res.token) {
-            if(this.getRoles()=="ROLE_ADMIN")
-
             localStorage.setItem('access_token', res.token);
             localStorage.setItem('email', res.email);
-            this.router.navigateByUrl('')
+            if(this.getRoles()=="ROLE_ADMIN") {
+              this.router.navigateByUrl('/admin')
+              return;
+            }
+            this.router.navigateByUrl('/home')
           }
         },
         error: (err) => {
