@@ -16,6 +16,7 @@ export class HomeComponent {
     if (this.authService.isLoggedIn) {
       // Navigate to create advert page
       this.router.navigate(['/create-advert']);
+      console.log("******")
       console.log(this.userConnected)
     } else {
       // Redirect to login page

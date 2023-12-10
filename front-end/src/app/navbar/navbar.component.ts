@@ -11,21 +11,13 @@ export class NavbarComponent {
   constructor(private authService:  authService,private router: Router) {}
 
   isLoggedIn(): boolean {
+    console.log("aaa => ", this.authService.isLoggedIn)
     return this.authService.isLoggedIn;
   }
 
-  // onLogoutClick(): void {
-  //   // Call your logout method from the AuthService
-  //   this.authService.logout().subscribe(
-  //     (response) => {
-  //       console.log(response); // Logged out successfully
-  //       // Add additional logic as needed after successful logout
-  //       this.router.navigate(['/auth']);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //       // Handle logout error if needed
-  //     }
-  //   );
-  // }
+  onLogoutClick(): void {
+    // Call your logout method from the AuthService
+    this.authService.logout();
+    this.router.navigate(['/auth']);
+  }
 }

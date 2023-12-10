@@ -17,6 +17,8 @@ import { CarteComponent } from './carte/carte.component';
 import { CreateAdvertComponent } from './components/create-advert/create-advert.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResetComponent } from './reset/reset.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ResetComponent } from './reset/reset.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule, BrowserAnimationsModule,
+    TabsModule
 
   ],
   providers: [],

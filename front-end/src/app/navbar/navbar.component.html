@@ -4,9 +4,9 @@
       <a><span>Tuni</span>Rent</a>
     </h1>
 
-    <nav id="navbar" class="navbar order-last order-lg-0">
+    <nav *ngIf="isLoggedIn()" id="navbar" class="navbar order-last order-lg-0">
       <ul>
-        <li><a [routerLink]="['']" >Acceuil</a></li>
+        <li><a [routerLink]="['']" >Accueil</a></li>
 
         <li class="dropdown">
           <a [routerLink]="['/carte']"><span>Carte</span> <i class="bi bi-chevron-down"></i
@@ -14,15 +14,25 @@
         </li>
 
 
-        <ng-container *ngIf="isLoggedIn(); else notLoggedIn">
-          <!-- If logged in, show Logout -->
-          <li><a (click)="onLogoutClick()">Logout</a></li>
-        </ng-container>
+        <li class="dropdown">
+          <a [routerLink]="['/home']" *ngIf="!isLoggedIn()">
+            <span>Se connecter</span>
+            <i class="bi bi-chevron-down"></i>
+          </a>
+          <a [routerLink]="['/auth']" (click)="onLogoutClick()" *ngIf="isLoggedIn()">
+            <span>Se déconnecter</span>
+            <i class="bi bi-chevron-down"></i>
+          </a>
+        </li>
+<!--        <ng-container *ngIf="isLoggedIn(); else notLoggedIn">-->
+<!--          &lt;!&ndash; If logged in, show Logout &ndash;&gt;-->
+<!--          <li><a (click)="onLogoutClick()" >Logout</a></li>-->
+<!--        </ng-container>-->
 
-        <ng-template #notLoggedIn>
-          <!-- If not logged in, show Se connecter -->
-          <li><a [routerLink]="['/auth']">Se connecter</a></li>
-        </ng-template>
+<!--        <ng-template #notLoggedIn>-->
+<!--          &lt;!&ndash; If not logged in, show Se connecter &ndash;&gt;-->
+<!--          <li><a [routerLink]="['/auth']">Se connecter</a></li>-->
+<!--        </ng-template>-->
 
         <li>
           <a >Profile</a>

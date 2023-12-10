@@ -9,7 +9,7 @@
             <form [formGroup]="LoginForm" (ngSubmit)="login()">
               <div class="login">
                 <div class="group">
-                  <label for="user" class="label">E-mail</label>
+                  <label for="user" class="label">Username</label>
                   <input id="user" type="text" class="input" placeholder="Entrez votre email" formControlName="username">
                 </div>
                 <div class="group">
@@ -17,11 +17,11 @@
                   <input id="pass" type="password" class="input" data-type="password" placeholder="Entrez votre mot de passe" formControlName="password">
                 </div>
                 <div class="group">
-<<<<<<< HEAD
-                  <a [routerLink]="['']" >Mot de passe oublié?</a>
-=======
+
+
+
                   <a [routerLink]="['/reset']" >Mot de passe oublié ?</a>
->>>>>>> nada
+
                 </div>
                 <div class="group">
                   <button type="submit" class="button">Se connecter</button>

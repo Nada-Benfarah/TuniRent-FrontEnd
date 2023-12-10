@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class authService {
 
-  endpoint: string = 'http://localhost:8888/api/auth';
+  endpoint: string = 'http://localhost:8080/api/auth';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient, public router: Router) { }

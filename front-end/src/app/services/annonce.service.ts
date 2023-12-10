@@ -5,7 +5,7 @@ import { Annonces} from '../interfaces/annonces';
 
 @Injectable({providedIn: 'root'})
 export class AnnonceService {
-  private  apiUrl : String = 'http://localhost:8888/api/advert';
+  private  apiUrl : String = 'http://localhost:8080/api/advert';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient,) {
