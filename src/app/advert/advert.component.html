@@ -1,0 +1,106 @@
+<div class="row mb-5 my-4">
+    <div class="col-8">
+      <div class="my-20 p-3 mb-5 mt-5 text-success">
+        <h1>Annonce</h1>
+      </div>
+  
+      <form [formGroup]="advertForm" (ngSubmit)="onSubmit()">
+        <div class="row my-4 mx-2">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address" class="font-weight-bold">Adresse:</label>
+              <input
+                id="address"
+                class="form-control"
+                formControlName="address"
+                type="text"
+                name="address"
+                required
+                [disabled]="!isLoggedIn()"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="price" class="font-weight-bold">Price:</label>
+              <input
+                id="price"
+                class="form-control"
+                formControlName="price"
+                type="text"
+                name="price"
+                required
+              />
+            </div>
+          </div>
+        </div>
+  
+        <div class="row my-4 mx-2">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="description" class="font-weight-bold">Description:</label>
+              <input
+                id="description"
+                class="form-control"
+                formControlName="description"
+                type="text"
+                name="description"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="font-weight-bold">Type :</label>
+              <div class="form-check">
+                <input class="form-check-input" formControlName="type" type="radio" name="type" id="room" value="ROOM">
+                <label class="form-check-label font-weight-bold" for="room">Chambre</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" formControlName="type" type="radio" name="type" id="bed" value="BED">
+                <label class="form-check-label font-weight-bold" for="bed">Lit</label>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row my-4 mx-2">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nbPlaces" class="font-weight-bold">Nb des Places disponibles :</label>
+              <input
+                id="nbPlaces"
+                class="form-control"
+                formControlName="nbPlaces"
+                type="number"
+                name="nbPlaces"
+                [max]="5"
+                [min]="0"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="font-weight-bold">Photos:</label>
+              <input
+                class="form-control-file"
+                type="file"
+                formControlName="photos"
+              />
+            </div>
+          </div>
+        </div>
+  
+        <div *ngIf="isLoggedIn()" class="form-group my-4 mx-2 d-flex justify-content-end">
+          <button type="submit" class="btn btn-success">
+            Update votre annonce
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onDelete()">
+            Supprimer votre annonce
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

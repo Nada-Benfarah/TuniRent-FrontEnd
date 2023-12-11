@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 mx-auto p-0">
+    <div class="card">
+      <div class="login-box mt-5">
+        <div class="login-snip">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Reset mot de passe</label>
+          <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+          <div class="login-space">
+            <form [formGroup]="passwordResetForm" (ngSubmit)="onSubmit()">
+              <div class="login">
+                <div class="form-group">
+                  <label for="currentPassword">Ancien Mot de passe</label>
+                  <input id="currentPassword" type="password" class="form-control" placeholder="Entrez votre mot de passe" formControlName="currentPassword">
+                </div>
+                <div class="form-group">
+                  <label for="newPassword">Nouveau Mot de passe</label>
+                  <input id="newPassword" type="password" class="form-control" placeholder="Entrez votre nouveau mot de passe" formControlName="newPassword">
+                </div>
+  
+                <div class="group">
+                  <button type="submit" class="button">Reset</button>
+                </div>
+                <div class="hr"></div>
+              </div>
+            </form>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

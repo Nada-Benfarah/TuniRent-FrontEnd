@@ -1,0 +1,54 @@
+
+<section id="hero" class="mb-4" >
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url(https://www.letudiant.fr/uploads/mediatheque/ETU_ETU/4/0/2300440-adobestock-105092598-original.jpeg);">
+        <div class="carousel-container">
+          <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2>Bienvenue Chez <span>  TuniRent</span></h2>
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <input type="text"  class="form-control form-control-lg" placeholder="chercher votre studio">
+              </div>
+              <div class="col-lg-4">
+                <button  (click)="onCreateAdvertClick()"  class="btn btn-primary btn-lg" >Proposer votre propre annonce</button>
+              </div>
+            </div>
+
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+
+
+
+    </div>
+
+  </div>
+</section>
+<div class="container text-center my-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded-1">
+  <h4 class="my-4 mx-2 shadow p-3 mb-5 bg-body-tertiary rounded w-60 text-success text-start"><u> Quelques annonces que vous pouvez intéresser</u></h4>
+
+  <div class="row my-4">
+    <div class="col-md-4 mb-4" *ngFor="let annonce of response">
+      <!-- Use an anchor tag as a button -->
+      <a [routerLink]="['/advert', annonce.id]">
+        <img [src]="annonce.images[0]" height="250" width="250" class="my-2">
+      </a>
+      <div>Adresse : {{ annonce.location }}</div>
+      <div>Nombre des places disponibles: {{ annonce.numberOfPlaces }} </div>
+      <div>Prix : {{ annonce.price }} TND</div>
+
+      <!-- Remove the "Voir" button since the image is now clickable -->
+    </div>
+  </div>
+
+  <button [routerLink]="['/adverts']" type="button" class="button btn btn-dark">Voir tout</button>
+</div>
+
+

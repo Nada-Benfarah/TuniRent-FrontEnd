@@ -1,0 +1,54 @@
+<div class="w-75 mx-4 my-4 p-5">
+  <div class="container-fluid my-4">
+    <div class="row justify-content-between mb-4">
+      <div class="col-md-3">
+        <form class="d-flex">
+          <div class="input-group">
+            <span class="input-group-text">Location:</span>
+            <input type="text" class="form-control" name="locationFilter"  placeholder="Search by location" [(ngModel)]="locationFilter">
+          </div>
+          <button class="btn btn-primary ms-2" (click)="applyFilters()">Filter</button>
+        </form>
+      </div>
+  
+      <div class="col-md-3">
+        <form class="d-flex">
+          <div class="input-group">
+            <span class="input-group-text">Price:</span>
+            <input hidden type="text" class="form-control" name="applyFilterPrice" placeholder="Search by type" [(ngModel)]="applyFilterPrice">
+
+            <button class="btn btn-primary ms-2" (click)="applyFilterPrice()">Filter</button>
+
+          </div>
+        </form>
+      </div>
+  
+      <div class="col-md-3">
+        <form class="d-flex">
+          <div class="input-group">
+            <span class="input-group-text">Type:</span>
+            <input type="text" class="form-control" name="typeFilter" placeholder="Search by type" [(ngModel)]="typeFilter">
+          </div>
+          <button class="btn btn-primary ms-2" (click)="applyFilterType()">Filter</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="row">
+      <ng-container *ngFor="let annonce of response">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img [src]="annonce.images[0]" class="card-img-top" alt="Announcement Image">
+            <div class="card-body">
+              <h5 class="card-title">{{ annonce.location }}</h5>
+              <p class="card-text">Places disponibles: {{ annonce.numberOfPlaces }}</p>
+              <p class="card-text">Prix: {{ annonce.price }} TND</p>
+              <a [routerLink]="['/advert/', annonce.id]" class="btn btn-success">Voir</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  
+</div>

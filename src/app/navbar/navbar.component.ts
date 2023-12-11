@@ -1,0 +1,32 @@
+import { Component } from '@angular/core';
+import { authService } from '../services/auth.service';
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class NavbarComponent {
+  constructor(private authService:  authService,private router: Router) {}
+
+  isLoggedIn(): boolean {
+    console.log("aaa => ", this.authService.isLoggedIn)
+    return this.authService.isLoggedIn;
+  }
+
+  onLogoutClick(): void {
+    this.authService.logout().subscribe(
+      () => {
+        
+        console.log('Logged out successfully');
+        localStorage.clear();
+        this.router.navigate(['/auth']);
+      },
+      error => {
+        // Handle logout error
+        console.error('Logout failed', error);
+      }
+    );
+  }
+}
